@@ -20,13 +20,7 @@ namespace WinFormsFindWordInFile
         }
         static public MyTask task = new MyTask();
         static Semaphore sem = new Semaphore(MyTask.drives.Length, 10);
-        //static void MethodFindWord()
-        //{
-           
-        //}
-
-        // public Thread thread = new Thread(FindWord);
-        //static ThreadStart FindWord => new ThreadStart(MethodFindWord);
+        
         private void btnStart_Click(object sender, EventArgs e)
         {
             if(txtWord.Text.Length==0)

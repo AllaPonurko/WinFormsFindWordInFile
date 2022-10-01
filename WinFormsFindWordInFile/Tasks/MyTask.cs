@@ -19,28 +19,24 @@ namespace WinFormsFindWordInFile.Tasks
         //    }
         //    return ts;
         //}
-        static List<string> GetFilesInDir()
-        {
-            List<string> files=new List<string>();
-            foreach(var item in drives)
-            {
-                files.AddRange(Directory.GetFiles(item.Name));
-            }
-            return files;
-        }
-        
-        public List<string> KeyWord(string str)
-        {
+        public Action<int> OnCountChanged;
+        int count = 0;
+        public void KeyWord(/*string str*/)
+        {  
             List<string> vs = new List<string>();
-            foreach (var item in GetFilesInDir())
+            IEnumerable<string> allfiles ;
+            foreach (var item in drives)
             {
-                StreamReader file = new StreamReader(item);
-                if(file.ReadLine().Contains(str))
-                {
-                    vs.Add(item);
+                allfiles = Directory.EnumerateFiles(item.Name);
+                foreach(var s in allfiles)
+                {StreamReader file = new StreamReader(s);
+                    if (file.ReadLine().Contains(str))
+                    {
+                        vs.Add(s);
+                        count++;
+                    }
                 }
-            }
-            return vs;
+            }    
         }
         
     }

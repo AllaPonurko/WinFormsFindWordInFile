@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsFindWordInFile.Tasks;
 
 namespace WinFormsFindWordInFile
 {
@@ -16,6 +18,24 @@ namespace WinFormsFindWordInFile
         {
             InitializeComponent();
         }
+        static public MyTask task = new MyTask();
+        static Semaphore sem = new Semaphore(MyTask.drives.Length, 10);
+        //static void MethodFindWord()
+        //{
+           
+        //}
 
+        // public Thread thread = new Thread(FindWord);
+        //static ThreadStart FindWord => new ThreadStart(MethodFindWord);
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if(txtWord.Text.Length==0)
+            {
+                MessageBox.Show("Нет слова для поиска!");
+            }
+            else
+            lstFiles.Items.AddRange((task.KeyWord(txtWord.Text)).ToArray());
+
+        }
     }
 }

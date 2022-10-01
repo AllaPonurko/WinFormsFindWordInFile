@@ -54,18 +54,19 @@ namespace WinFormsFindWordInFile
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(13, 84);
+            this.btnStart.Location = new System.Drawing.Point(12, 114);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(100, 23);
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Старт";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lstFiles
             // 
             this.lstFiles.FormattingEnabled = true;
             this.lstFiles.ItemHeight = 15;
-            this.lstFiles.Location = new System.Drawing.Point(164, 84);
+            this.lstFiles.Location = new System.Drawing.Point(164, 114);
             this.lstFiles.Name = "lstFiles";
             this.lstFiles.Size = new System.Drawing.Size(179, 184);
             this.lstFiles.TabIndex = 3;
@@ -73,7 +74,7 @@ namespace WinFormsFindWordInFile
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(164, 31);
+            this.label2.Location = new System.Drawing.Point(164, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 15);
             this.label2.TabIndex = 4;
@@ -101,8 +102,8 @@ namespace WinFormsFindWordInFile
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtWord;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.ListBox lstFiles;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ListBox lstFiles;
     }
 }
 

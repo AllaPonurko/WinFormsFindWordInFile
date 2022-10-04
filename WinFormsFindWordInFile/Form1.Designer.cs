@@ -100,10 +100,10 @@ namespace WinFormsFindWordInFile
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtWord;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ListBox lstFiles;
+        public System.Windows.Forms.TextBox txtWord;
     }
 }
 
